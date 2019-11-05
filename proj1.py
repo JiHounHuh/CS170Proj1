@@ -67,19 +67,23 @@ class Movement:
 print(GOALSTATE)
 print(INITIALSTATE)
 print(INITIALSTATE[2][1])
+init_state = str(INITIALSTATE)
+goal_state = str(GOALSTATE)
+print("Hashed init state is: " + str(hash(init_state)))
+print("Hashed goal state is: " + str(hash(goal_state)))
 #Record cost and estimated distance
 row = 2
 col = 2
-if(i < col):
+#if(i < col):
     #can move right
     
-if(col > 0):
+#if(col > 0):
     #can move left
 
-if(j < row):
+#if(j < row):
     #can move down
 
-if(row > 0):
+#if(row > 0):
     #can move up
 
 
@@ -93,7 +97,11 @@ for i in range(3):
     for j in range(3):
         print(INITIALSTATE[i][j], end =' ')
 
-
+print()
+print(INITIALSTATE[2][2])
+temp_state = INITIALSTATE[1][2]
+INITIALSTATE[1][2] = INITIALSTATE[2][2]
+INITIALSTATE[2][2] = temp_state
 
 for i in range(3):
     print('')
