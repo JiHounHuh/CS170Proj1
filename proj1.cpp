@@ -7,6 +7,10 @@
 using namespace std;
 
 int uniform(int alpha, int beta) {
+    int row, col;
+    row = 2;
+    col = 2;
+
     // Find head node
     // left
     // down

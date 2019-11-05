@@ -3,14 +3,14 @@ import copy
 import queue
 import math
 
-GOALSTATE = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', ' ']]
-INITIALSTATE = [['4', '1', '2'], ['8', '3', '6'], ['5', '7', ' ']]
+GOALSTATE = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '0']]
+INITIALSTATE = [['4', '1', '2'], ['8', '3', '6'], ['5', '7', '0']]
 PUZZLETYPE = 8
 MAXSIZE = (math.sqrt(PUZZLETYPE + 1))
-class PriorityQueue(problem):
-    print("help")
-    def __init__(self):
-        self.elements = []
+#class PriorityQueue(problem):
+ #   print("help")
+  #  def __init__(self):
+   #     self.elements = []
 
 #Class Puzzle
 # def zero_position
@@ -56,25 +56,63 @@ class Movement:
         #State.new Puzzle.swap(cell), @path + [direction] if cell
     #end
 
-class Puzzle:
-    def __init__(self, init = INITIALSTATE, shape = DIMENSIONS):
-        self.state = list(init)
-        for i in range(shape):
-            for j in range(shape):
-                if(init[i,j] == ' '):
-                    self.space = Movement(i,j)
+#class Puzzle:
+#    def __init__(self, init = INITIALSTATE, shape = DIMENSION):
+#        self.state = list(init)
+#        for i in range(shape):
+#            for j in range(shape):
+#                if(init[i,j] == ' '):
+#                    self.space = Movement(i,j)
+
+print(GOALSTATE)
+print(INITIALSTATE)
+print(INITIALSTATE[2][1])
+#Record cost and estimated distance
+row = 2
+col = 2
+if(i < col):
+    #can move right
+    
+if(col > 0):
+    #can move left
+
+if(j < row):
+    #can move down
+
+if(row > 0):
+    #can move up
 
 
-print ("hello")
-K = queue.Queue(maxsize=3)
-print ("test")
-print(K.qsize())
-K.put(1)
-K.put(3)
-K.put(2)
-print("Full: ", K.full()) 
-print(K.get())
-print ("hello")
+
+
+
+
+
+for i in range(3):
+    print('')
+    for j in range(3):
+        print(INITIALSTATE[i][j], end =' ')
+
+
+
+for i in range(3):
+    print('')
+    for j in range(3):
+        print(INITIALSTATE[i][j], end =' ')
+
+
+
+
+#print ("hello")
+#K = queue.Queue(maxsize=3)
+#print ("test")
+#print(K.qsize())
+#K.put(1)
+#K.put(3)
+#K.put(2)
+#print("Full: ", K.full()) 
+#print(K.get())
+#print ("hello")
 
 
 
