@@ -15,6 +15,16 @@ int uniform(int alpha, int beta) {
 
 }
 
+int AStarMisplaced() {
+    
+}
+
+int AStarManhattan() {
+
+}
+
+
+
 int left(node->head) {
     if(node->left != NULL)
         curr->left;
