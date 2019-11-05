@@ -25,13 +25,13 @@ int AStarManhattan() {
 
 
 
-int left(node->head) {
-    if(node->left != NULL)
-        curr->left;
-    uniform(curr,goal);
+// int left(node->head) {
+//     if(node->left != NULL)
+//         curr->left;
+//     uniform(curr,goal);
 
     
-}
+// }
 
 int main() {
 

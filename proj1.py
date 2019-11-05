@@ -12,6 +12,17 @@ class PriorityQueue(problem):
     def __init__(self):
         self.elements = []
 
+#Class Puzzle
+# def zero_position
+#   @cells.index(0)
+# end
+# def swap swap_index
+#   new_cells = @cells.clone
+#   new_cells[zero_position] = new_cells[swap_index]
+#   new_cells[swap_index] = 0
+#   Puzzle.new new_cells
+# end
+#end
 
 class Movement:
     alpha = 0
@@ -19,12 +30,31 @@ class Movement:
     def __init__ (self, alpha = 0, beta = 0):
         self.alpha = alpha
         self.beta = beta
-    
+
+   # Directions = [:left, :right, :up, :down]
+    #attr_reader :puzzle, :__path__
     # Init state
+
     # Move Up
+
     # Move Down
     # Move Left
     # Move Right
+   # def branch_toward(direction):
+        #blank_position = Puzzle.zero_position
+       # blankx = blank_position % 3
+        # cell = case direction
+        #when :left
+            #blank_position - 1 unless == blankx
+        #when :right
+            #blank_position + 1 unless 2 == blankx
+       # when :up
+            #blank_position - 3 unless 0 == blanky
+       # when :down
+            #blank_position + 3 unless 2 == blanky
+        #end
+        #State.new Puzzle.swap(cell), @path + [direction] if cell
+    #end
 
 class Puzzle:
     def __init__(self, init = INITIALSTATE, shape = DIMENSIONS):
