@@ -14,16 +14,34 @@ MAXSIZE = (math.sqrt(PUZZLETYPE + 1))
    #     self.elements = []
 
 class Node():
-    def __init__(self, head=None, pos=None):
-        self.head = head
+    def __init__(self, head, pos=0):
+        self.head = copy.deepcopy(head)
         self.pos = pos
         
         self.f = 0
         self.g = 0
         self.h = 0
+        self.queue = [] # Creating Queue for the nodes
     def __eq__(self, other): # Return if they are equal
         return self.pos == other.pos
-        
+    
+    def getState(self):
+        return self.head.getState()
+
+    def getDistance(self):
+        return self.g
+    
+    def getTotal(self):
+        return self.f
+    
+    def updateTotal(self, hVal):
+        self.f = hVal
+
+    def queuing(self):
+        self.queue.insert(0,self.head)
+
+
+
 class Movement:
     alpha = 0
     beta = 0
@@ -47,9 +65,19 @@ class Movement:
         if(row < 2):
             newSpot[alpha][beta], newSpot[alpha-1][beta] = newSpot[alpha-1][beta], newSpot[alpha][beta]
             self._blank.set(x = (alpha - 1))
-            
-        
 
+
+#class Queueing:
+#    def __init__ (self, )
+
+
+def hashCheck(node):
+    value = hash(node)
+    for i in hashesCode:
+        if value == i:
+            return True
+    hashesCode.append(value)
+    return False
 
 
    # def branch_toward(direction):
@@ -134,25 +162,9 @@ temp_state = INITIALSTATE[1][2]
 INITIALSTATE[1][2] = INITIALSTATE[2][2]
 INITIALSTATE[2][2] = temp_state
 print()
-print("Goal State",end=' ')
+print("Next State",end=' ')
 for i in range(3):
     print('')
     for j in range(3):
         print(INITIALSTATE[i][j], end =' ')
-
-
-
-
-#print ("hello")
-#K = queue.Queue(maxsize=3)
-#print ("test")
-#print(K.qsize())
-#K.put(1)
-#K.put(3)
-#K.put(2)
-#print("Full: ", K.full()) 
-#print(K.get())
-#print ("hello")
-
-
 
