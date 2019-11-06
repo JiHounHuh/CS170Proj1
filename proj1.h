@@ -6,6 +6,28 @@
 #include <iostream>
 using namespace std;
 
+
+
+class searches{
+    public:
+        virtual void heuristic(node*) = 0;
+};
+
+class ucs:public searches{
+    public:
+        void heuristic(node* h){}
+};
+
+class misplaced:public searches{
+    public:
+        void heuristic(node* h){}
+};
+
+class manhattan:public searches{
+    public:
+        void heuristic(node* h){}
+};
+
 vector<vector<int>> goal = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '0'}};
 class node{
     public:
@@ -94,6 +116,8 @@ void generalSearch(node *A) {
     }
     return;
 }
+
+
 
 
 
