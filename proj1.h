@@ -7,15 +7,15 @@
 
 using namespace std;
 
-vector<vector<int>> goal = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}};
+vector<vector<int>> goal = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}}; // Default set goal
 
 class node{
     public:
         int g,h;
         vector<vector<int>> state;
-        node(){state = {{4, 1, 2},{8, 3, 6},{5, 7, 0}}; g = 0; h = 0;}
+        node(){state = {{4, 1, 2},{8, 3, 6},{5, 7, 0}}; g = 0; h = 0;} // default initial state 
         node(node*copy){
-            this->g = copy->g;
+            this->g = copy->g; // copy
             this->h = copy->h;
             this->state = copy->state;
         }
@@ -23,13 +23,13 @@ class node{
 };
 class searches{
     public:
-        virtual void heuristic(node*) = 0;
+        virtual void heuristic(node*) = 0; 
 };
 
 
 class ucs:public searches{
     public:
-        void heuristic(node* h){}
+        void heuristic(node* h){} // nothing to do for hardcoded 0 for heuristics
 };
 
 class misplaced:public searches{
@@ -38,7 +38,7 @@ class misplaced:public searches{
             int value = 0;
             for(int i = 0; i < 3; i++) {
                 for(int j = 0; j < 3; j++) {
-                    if(h->state[i][j] != goal[i][j]) value++;
+                    if(h->state[i][j] != goal[i][j]) value++; // if the current state is not the same, add weight
                 }
             }
             h->h = value;
@@ -55,7 +55,7 @@ class manhattan:public searches{
                     if(temp1 != 0) {
                         temp2 = (temp1 - 1)/3;
                         temp3 = (temp1 - 1)%3;
-                        total += abs(temp2 - i) + abs(temp3 - j);
+                        total += abs(temp2 - i) + abs(temp3 - j); // math to calculate the path and movement needed 
                     }
                     
                     
